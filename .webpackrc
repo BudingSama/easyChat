@@ -1,0 +1,16 @@
+{
+  "extraBabelPlugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": true
+    }],
+    ["module-resolver", {
+      "root":"./src",
+      "alias":{
+        "~":"./src"
+      }
+    }]
+  ],
+  "hash": true
+}
