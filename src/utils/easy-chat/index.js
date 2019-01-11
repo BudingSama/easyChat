@@ -1,15 +1,19 @@
 import React from 'react';
 import { Motion, spring, presets } from 'react-motion';
 import styles from './index.css';
+console.log(styles);
 let timer = null;
-class EasyChat extends React.PureComponent{
-  state = {
-    left:500,
-    btnLeft:-10,
-    answerList:[],
-    currentSelect:'',
-    sendSrc:2,
-    loading:false
+class EasyChat extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      left:500,
+      btnLeft:-10,
+      answerList:[],
+      currentSelect:'',
+      sendSrc:2,
+      loading:false
+    }
   }
   initChat = async () => {
     const _this = this;
@@ -111,9 +115,19 @@ class EasyChat extends React.PureComponent{
         body:JSON.stringify(currentData)
       }).then(res => res.json()).then(data => {
         //不合法 4007
+        console.log(data)
         if(data.intent.code !== 4007){
           const item = _this.state.answerList;
-          item.push({bol:0,value:data.results[0].values.text});
+          const value = data.results.map(ele => {
+            const text = [];
+            for(const key in ele.values){
+              if(ele.values[key]){
+                text.push(ele.values[key])
+              }
+            }
+            return text.join(' ')
+          })
+          item.push({bol:0,value:value.join(' ')});
             _this.setState({
               answerList:item,
               currentSelect:'',
@@ -138,7 +152,6 @@ class EasyChat extends React.PureComponent{
     document.removeEventListener("keydown", this.onKeyDown)
   }
   render(){
-    console.log(this.state.answerList)
     const img = require(`./icon/send-${this.state.sendSrc}.png`);
     return (
       <div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import EasyChat from '~/utils/easy-chat';
+// import EasyChat from '~/utils/easy-chat';
+import EasyChat from 'react-easychat';
 class Demo extends React.PureComponent{
     state = {
     }

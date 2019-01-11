@@ -109,6 +109,7 @@ html{
 }
 .chatItem p{
   float: left;
+  word-wrap:break-word;
   max-width: 150px;
   min-height: 17px;
   margin: 5px 0 5px 5px;
