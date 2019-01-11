@@ -18,6 +18,8 @@ $ npm install react-easychat -S
     status:'',//可选 助手在线状态 在线/离线/忙碌/离开
     chatStatus:'',//可选 助手聊天状态
     placeholder:'',//可选 输入框 placeholder
+    offsetTop:20,//必填 按钮高度
+    position:'left'//必填 助手定位[包括动画方向] left/right
   }
       
       
