@@ -12,7 +12,7 @@
     "dva": "^2.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-easychat": "^1.1.9",
+    "react-easychat": "^1.2.1",
     "react-motion": "^0.5.2"
   },
   "devDependencies": {
