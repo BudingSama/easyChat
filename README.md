@@ -23,3 +23,6 @@ $ npm install react-easychat -S
       
   <EasyChat options={options} />
 ```
+- **example**
+
+![](https://raw.githubusercontent.com/BudingSama/easyChat/demo.png)
