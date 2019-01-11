@@ -25,4 +25,4 @@ $ npm install react-easychat -S
 ```
 - **example**
 
-![](https://raw.githubusercontent.com/BudingSama/easyChat/demo.png)
+![](https://raw.githubusercontent.com/BudingSama/easyChat/master/demo.png)
