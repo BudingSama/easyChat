@@ -1,14 +1,13 @@
 import React from 'react';
 import { Motion, spring, presets } from 'react-motion';
 import styles from './index.css';
-console.log(styles);
 let timer = null;
 class EasyChat extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      left:500,
-      btnLeft:-10,
+      left:props.options.position === 'left' ? -900 : 500,
+      btnLeft:props.options.position === 'left' ? 10 : -10,
       answerList:[],
       currentSelect:'',
       sendSrc:2,
@@ -31,11 +30,11 @@ class EasyChat extends React.Component{
     }
     const arr = [];
     this.setState({
-      btnLeft:200
+      btnLeft:_this.props.options.position === 'left' ? -200 : 200
     })
     setTimeout(() => {
       _this.setState({
-        left:-10,
+        left:_this.props.options.position === 'left' ? -540 : -10,
       })
     }, 200);
     answerList.forEach((ele,index) => {
@@ -50,11 +49,11 @@ class EasyChat extends React.Component{
   exit = () => {
     const _this = this;
     this.setState({
-      left:500
+      left:_this.props.options.position === 'left' ? -900 : 500
     })
     setTimeout(() => {
       _this.setState({
-        btnLeft:-10
+        btnLeft:_this.props.options.position === 'left' ? 10 : -10
       })
     }, 200);
   }
@@ -152,11 +151,18 @@ class EasyChat extends React.Component{
     document.removeEventListener("keydown", this.onKeyDown)
   }
   render(){
+    const _this = this;
     const img = require(`./icon/send-${this.state.sendSrc}.png`);
     return (
       <div>
         <Motion style={{btn: spring(this.state.btnLeft,presets.stiff)}}>
-          { sty => <div style={{transform: `translateX(${sty.btn}px)`}} onClick={this.initChat} className={styles.clickImage}></div> }
+          { sty => {
+            let stys = {
+              transform: `translateX(${sty.btn}px)`,
+              top: _this.props.options.offsetTop
+            };
+            return (<div style={stys} onClick={this.initChat} className={_this.props.options.position === 'left' ? styles.clickImageL : styles.clickImage}></div>)
+          } }
         </Motion>
         <Motion style={{x: spring(this.state.left, presets.stiff)}}>
           {interpolatingStyle => <section style={{transform: `translateX(${interpolatingStyle.x}px)`}} className={styles.chatContainer}>

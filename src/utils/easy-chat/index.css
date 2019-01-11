@@ -11,8 +11,18 @@ html{
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
   position: absolute;
-  top: 10px;
   right: 0;
+}
+.clickImageL{
+  border-radius: 50%;
+  background: url('./icon/chat-_2.png');
+  background-size: 100% 100%;
+  width:50px;
+  height: 50px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  position: absolute;
+  left: 0;
 }
 .clickImage:hover{
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.15);

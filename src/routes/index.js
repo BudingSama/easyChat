@@ -11,6 +11,8 @@ class Demo extends React.PureComponent{
         status:'',
         chatStatus:'',
         placeholder:'',
+        offsetTop:20,
+        position:'left'
       }
         return (
           <div>
