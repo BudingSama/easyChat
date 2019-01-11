@@ -1,7 +1,7 @@
 # react-easychat
 - **version**
 ```
-verison 1.1.9
+verison 1.2.1
 ```
 
 - **quick start**
